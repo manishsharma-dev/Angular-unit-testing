@@ -87,6 +87,9 @@ describe(('CommentComponent'), () => {
         const commentsLiElement = fixture.nativeElement.querySelectorAll('li');
 
         expect(commentsLiElement.length).toBe(1);
+        expect(commentsLiElement[0].innerText).toBe(comments.text);
+        expect(commentsService.postComment).toHaveBeenCalledOnceWith(comments);
+
     });
 
 })
